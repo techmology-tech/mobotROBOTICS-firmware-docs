@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>BLE &#8212; mobotROBOTICS ESP32 User API  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=c73c0f3e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=2dccb0ec"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'boards/mobotmini/ble';</script>
+    <link rel="canonical" href="https://techmology-tech.github.io/mobotROBOTICS-firmware-docs/boards/mobotmini/ble.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="RGB LED" href="rgb.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">mobotROBOTICS ESP32 User API  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Boards</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Boards</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mobotrobotics/overview.html">Mobot ROBOTICS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/leds.html">LEDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/buzzer.html">Buzzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/motors.html">Motors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/ir_sensors.html">IR Sensors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/ultrasonic.html">Ultrasonic Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/color_sensor.html">Color Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/compass.html">Compass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/joysticks.html">Joysticks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/servo.html">Servo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mobotrobotics/ble.html">BLE</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="overview.html">Mobot MINI</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="leds.html">LEDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="buzzer.html">Buzzer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="motors.html">Motors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rgb.html">RGB LED</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">BLE</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/boards/mobotmini/ble.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>BLE</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-properties">Main properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-property-read">Quick property read</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-controller-input">Read controller input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pop-methods">Common pop methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-specific-pop-methods">MINI-specific pop methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-callbacks">Snapshot + callbacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ble-control-helpers">BLE control helpers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-gate-methods">Activation gate methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-lifecycle-methods">Background lifecycle methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-conversion-methods">Helper conversion methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-snapshot-example">State snapshot example</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ble">
+<h1>BLE<a class="headerlink" href="#ble" title="Link to this heading">#</a></h1>
+<p>Use <code class="docutils literal notranslate"><span class="pre">mobotMINI.ble</span></code> to read phone/controller input and robot state.</p>
+<p>This object is typically used for:</p>
+<ul class="simple">
+<li><p>Checking whether the robot is connected</p></li>
+<li><p>Reading gamepad/joystick events</p></li>
+<li><p>Managing BLE background handling</p></li>
+</ul>
+<section id="main-properties">
+<h2>Main properties<a class="headerlink" href="#main-properties" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> joystick values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isPressed</span></code> dictionary (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">up</span></code>, <code class="docutils literal notranslate"><span class="pre">down</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_connected</span></code>, <code class="docutils literal notranslate"><span class="pre">is_running</span></code>, <code class="docutils literal notranslate"><span class="pre">is_ble_on</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mobot_name</span></code>, <code class="docutils literal notranslate"><span class="pre">control_mode</span></code>, <code class="docutils literal notranslate"><span class="pre">battery_level</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">motor_config</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rgb_color_mode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">piano_input</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">action_sequence_control</span></code></p></li>
+</ul>
+</section>
+<section id="quick-property-read">
+<h2>Quick property read<a class="headerlink" href="#quick-property-read" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;y:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;connected:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">is_connected</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mode:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">control_mode</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;battery:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">battery_level</span><span class="p">)</span>
+
+<span class="n">pressed</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">isPressed</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A:&quot;</span><span class="p">,</span> <span class="n">pressed</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="s2">&quot;B:&quot;</span><span class="p">,</span> <span class="n">pressed</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="s2">&quot;UP:&quot;</span><span class="p">,</span> <span class="n">pressed</span><span class="p">[</span><span class="s2">&quot;up&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="read-controller-input">
+<h2>Read controller input<a class="headerlink" href="#read-controller-input" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">pop_gamepad</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No new input&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">buttons</span> <span class="o">=</span> <span class="n">event</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gamepad event:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">buttons</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="common-pop-methods">
+<h2>Common pop methods<a class="headerlink" href="#common-pop-methods" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_gamepad()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_control_mode_changed()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_motor_config_changed()</span></code></p></li>
+</ul>
+</section>
+<section id="mini-specific-pop-methods">
+<h2>MINI-specific pop methods<a class="headerlink" href="#mini-specific-pop-methods" title="Link to this heading">#</a></h2>
+<p>Use these when your app sends MINI-specific commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_rgb_color_mode_changed()</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">(changed,</span> <span class="pre">value)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_action_sequence()</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">(changed,</span> <span class="pre">data_bytes)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_action_sequence_control()</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">(changed,</span> <span class="pre">control)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pop_piano_input()</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">(changed,</span> <span class="pre">bitmask)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">changed</span><span class="p">,</span> <span class="n">preset</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">pop_rgb_color_mode_changed</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New RGB preset:&quot;</span><span class="p">,</span> <span class="n">preset</span><span class="p">)</span>
+
+<span class="n">changed</span><span class="p">,</span> <span class="n">sequence_data</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">pop_action_sequence</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sequence bytes length:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence_data</span><span class="p">))</span>
+
+<span class="n">changed</span><span class="p">,</span> <span class="n">control</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">pop_action_sequence_control</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sequence control:&quot;</span><span class="p">,</span> <span class="n">control</span><span class="p">)</span>
+
+<span class="n">changed</span><span class="p">,</span> <span class="n">piano_bits</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">pop_piano_input</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Piano input bitmask:&quot;</span><span class="p">,</span> <span class="n">piano_bits</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="snapshot-callbacks">
+<h2>Snapshot + callbacks<a class="headerlink" href="#snapshot-callbacks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_state_snapshot()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on_mode_change(callback)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">on_config_change(callback)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">on_mode</span><span class="p">(</span><span class="n">old_mode</span><span class="p">,</span> <span class="n">new_mode</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mode changed:&quot;</span><span class="p">,</span> <span class="n">old_mode</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">new_mode</span><span class="p">)</span>
+
+<span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">on_mode_change</span><span class="p">(</span><span class="n">on_mode</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">get_state_snapshot</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="ble-control-helpers">
+<h2>BLE control helpers<a class="headerlink" href="#ble-control-helpers" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rename device and start BLE task&quot;</span><span class="p">)</span>
+<span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">changeName</span><span class="p">(</span><span class="s2">&quot;Mobot MINI&quot;</span><span class="p">)</span>
+<span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">set_control_mode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">set_battery_level</span><span class="p">(</span><span class="mi">95</span><span class="p">)</span>
+<span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">start_ble_background</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="activation-gate-methods">
+<h2>Activation gate methods<a class="headerlink" href="#activation-gate-methods" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">enable_activation_gate(enabled=True)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_activation_gate_enabled()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_activated()</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">enable_activation_gate</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gate enabled:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">is_activation_gate_enabled</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activated now:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">is_activated</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="background-lifecycle-methods">
+<h2>Background lifecycle methods<a class="headerlink" href="#background-lifecycle-methods" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start_ble_background()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop_ble_background(timeout_ms=3000)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutdown_ble_thread(timeout_ms=1000)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">start_ble_background</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BLE running:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">is_running</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="helper-conversion-methods">
+<h2>Helper conversion methods<a class="headerlink" href="#helper-conversion-methods" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mode_to_string(mode)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">event_to_string(event)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">error_to_string(error)</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">mode_to_string</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">event_to_string</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">error_to_string</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use pop methods in loops to process only new events.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not restart BLE background repeatedly inside fast loops.</p>
+</div>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Quick test</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">is_connected</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gamepad:&quot;</span><span class="p">,</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">pop_gamepad</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Full script</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">start_ble_background</span><span class="p">()</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">pop_gamepad</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">event</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Event:&quot;</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="common-mistakes">
+<h2>Common mistakes<a class="headerlink" href="#common-mistakes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Forgetting <code class="docutils literal notranslate"><span class="pre">None</span></code> handling in pop methods.</p></li>
+<li><p>Ignoring MINI-specific pop APIs for RGB/sequence/piano data.</p></li>
+<li><p>Setting invalid control mode values.</p></li>
+</ul>
+</section>
+<section id="state-snapshot-example">
+<h2>State snapshot example<a class="headerlink" href="#state-snapshot-example" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snapshot</span> <span class="o">=</span> <span class="n">mobotMINI</span><span class="o">.</span><span class="n">ble</span><span class="o">.</span><span class="n">get_state_snapshot</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BLE snapshot:&quot;</span><span class="p">,</span> <span class="n">snapshot</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="rgb.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">RGB LED</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-properties">Main properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-property-read">Quick property read</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-controller-input">Read controller input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pop-methods">Common pop methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-specific-pop-methods">MINI-specific pop methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snapshot-callbacks">Snapshot + callbacks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ble-control-helpers">BLE control helpers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-gate-methods">Activation gate methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-lifecycle-methods">Background lifecycle methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-conversion-methods">Helper conversion methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-mistakes">Common mistakes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-snapshot-example">State snapshot example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Techmo
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Techmo.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
